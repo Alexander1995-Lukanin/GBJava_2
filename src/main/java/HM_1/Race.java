@@ -17,27 +17,21 @@ public class Race {
         };
         for (Movement movement : movements) {
             for (Movement obstacle : obstacles) {
-                if (obstacle instanceof Track){
+                if (obstacle instanceof Track) {
                     if (movement.runTrack()) {
-                        System.out.println(movement+" смог пробежать дистанцию");
-                    }
-                    else {
-                        System.out.println(movement+" сошел с дистанции");
+                        System.out.println(movement + " смог пробежать дистанцию");
+                    } else {
+                        System.out.println(movement + " сошел с дистанции");
                         break;
-                }
-                }
-               else if (obstacle instanceof Wall){
-                    if (movement.jumpWall()){
-                        System.out.println(movement+" смог преодолеть стену");
                     }
-                    else {
-                        System.out.println(movement+" сошел с дистанции");
+                } else if (obstacle instanceof Wall) {
+                    if (movement.jumpWall()) {
+                        System.out.println(movement + " смог преодолеть стену");
+                    } else {
+                        System.out.println(movement + " сошел с дистанции");
                     }
                 }
-
             }
         }
-
-
     }
 }
