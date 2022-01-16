@@ -1,18 +1,20 @@
-public class Man implements Movement{
+package HM_1;
+
+public class Robot implements Movement{
     private Integer limitRun;
     private Integer limitJump;
-    public Man ( int limitRun,int limitJump) {
+    public Robot ( int limitRun,int limitJump) {
         this.limitRun= limitRun;
         this.limitJump= limitJump;
     }
     @Override
     public void run() {
-        System.out.println("Человек бежит");
+        System.out.println("Робот бежит");
     }
 
     @Override
     public boolean jump() {
-        System.out.println("Человек прыгает");
+        System.out.println("Робот прыгает");
         return false;
     }
 
@@ -30,5 +32,6 @@ public class Man implements Movement{
         }
         return false;
     }
+
 
 }

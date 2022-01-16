@@ -1,3 +1,5 @@
+package HM_1;
+
 public class Cat implements Movement{
     private Integer limitRun;
     private Integer limitJump;
