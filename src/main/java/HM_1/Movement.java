@@ -1,3 +1,5 @@
+package HM_1;
+
 public interface Movement {
  void run();
  boolean jump();

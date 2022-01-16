@@ -1,3 +1,5 @@
+package HM_1;
+
 public class Wall implements Movement{
     private static Integer heightWall;
 
