@@ -20,17 +20,11 @@ public class Man implements Movement{
 
     @Override
     public boolean runTrack() {
-        if (limitRun>Track.getLongTrack()){
-            return true;
-        }
-        return false;
+        return (limitRun>Track.getLongTrack());
     }
     @Override
     public boolean jumpWall() {
-        if (limitJump>Wall.getHeightWall()){
-            return true;
-        }
-        return false;
+        return (limitJump>Wall.getHeightWall());
     }
 
 }

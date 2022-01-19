@@ -8,13 +8,12 @@ public class Track implements Movement {
         return longTrack;
     }
 
-    public Track (Integer longTrack) {
-        this.longTrack= longTrack;
+    public Track(Integer longTrack) {
+        this.longTrack = longTrack;
     }
 
     @Override
     public void run() {
-
     }
 
 
