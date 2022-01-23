@@ -4,17 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="240b9b7e-b82b-455e-a41e-2b9126be26a6" name="Changes" comment="HomeWork_1">
-      <change afterPath="$PROJECT_DIR$/src/main/java/HM_2/Exceptions.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/HM_2/MyArrayDataException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/HM_2/MyArraySizeException.java" afterDir="false" />
+    <list default="true" id="240b9b7e-b82b-455e-a41e-2b9126be26a6" name="Changes" comment="HomeWork_2 and HomeWork_1">
+      <change afterPath="$PROJECT_DIR$/src/main/java/HM_3/Collection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/HM_3/TelephoneBook.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/HM_1/Cat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/HM_1/Cat.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/HM_1/Man.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/HM_1/Man.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/HM_1/Race.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/HM_1/Race.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/HM_1/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/HM_1/Robot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/HM_1/Track.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/HM_1/Track.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/HM_1/Wall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/HM_1/Wall.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/HM_2/Exceptions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/HM_2/Exceptions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/HM_2/MyArrayDataException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/HM_2/MyArrayDataException.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +64,19 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.Exceptions">
+    <configuration name="Collection" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="HM_3.Collection" />
+      <module name="Java_2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="HM_3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Exceptions" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="HM_2.Exceptions" />
       <module name="Java_2" />
@@ -89,6 +100,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Exceptions" />
+        <item itemvalue="Application.Collection" />
       </list>
     </recent_temporary>
   </component>
@@ -122,7 +134,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642324461631</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="HomeWork_2 and HomeWork_1">
+      <created>1642337337585</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1642337337585</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -154,25 +173,34 @@
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
     <MESSAGE value="HomeWork_1" />
-    <option name="LAST_COMMIT_MESSAGE" value="HomeWork_1" />
+    <MESSAGE value="HomeWork_2 and HomeWork_1" />
+    <option name="LAST_COMMIT_MESSAGE" value="HomeWork_2 and HomeWork_1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/HM_1/Robot.java</url>
-          <line>5</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/HM_2/Exceptions.java</url>
           <line>17</line>
           <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/HM_3/Collection.java</url>
+          <line>4</line>
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="HM_2.MyArrayDataException" package="HM_2" />
           <option name="timeStamp" value="5" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/HM_3/TelephoneBook.java</url>
+          <line>15</line>
+          <properties class="HM_3.TelephoneBook" method="get">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
