@@ -1,12 +1,14 @@
 package HM_1;
 
-public class Man implements Movement{
+public class Man implements Movement {
     private Integer limitRun;
     private Integer limitJump;
-    public Man ( int limitRun,int limitJump) {
-        this.limitRun= limitRun;
-        this.limitJump= limitJump;
+
+    public Man(int limitRun, int limitJump) {
+        this.limitRun = limitRun;
+        this.limitJump = limitJump;
     }
+
     @Override
     public void run() {
         System.out.println("Человек бежит");
@@ -20,11 +22,12 @@ public class Man implements Movement{
 
     @Override
     public boolean runTrack() {
-        return (limitRun>Track.getLongTrack());
+        return limitRun > Track.getLongTrack();
     }
+
     @Override
     public boolean jumpWall() {
-        return (limitJump>Wall.getHeightWall());
+        return limitJump > Wall.getHeightWall();
     }
 
 }

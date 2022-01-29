@@ -22,11 +22,11 @@ public class Robot implements Movement {
 
     @Override
     public boolean runTrack() {
-        return (limitRun > Track.getLongTrack());
+        return limitRun > Track.getLongTrack();
     }
 
     @Override
     public boolean jumpWall() {
-        return (limitJump > Wall.getHeightWall());
+        return limitJump > Wall.getHeightWall();
     }
 }
