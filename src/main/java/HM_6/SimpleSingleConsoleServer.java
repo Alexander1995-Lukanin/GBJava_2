@@ -3,6 +3,7 @@ package HM_6;
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.LinkedList;
 
 public class SimpleSingleConsoleServer {
     private static final int PORT = 8189;
@@ -10,35 +11,36 @@ public class SimpleSingleConsoleServer {
     private DataInputStream in;
     private DataOutputStream out;
     private Thread serverConsoleThread;
+    LinkedList <Handler> handlers = new LinkedList<>();
 
     public static void main(String[] args) {
-        new SimpleSingleConsoleServer().start();
+        try {
+            new SimpleSingleConsoleServer().start();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
-    public void start() {
-        try (var serverSocket = new ServerSocket(PORT)) {
-            System.out.println("Server started");
-            waitForConnection(serverSocket);
-            startConsoleThread();
-
+    public void start() throws IOException {
+        ServerSocket s = new ServerSocket(PORT);
+        System.out.println("Server Started");
+        try {
             while (true) {
-                var message = in.readUTF();
-                if (message.startsWith("/end")) {
-                    shutdown();
-                    break;
+                Socket socket = s.accept();
+                try {
+                    handlers.add(new Handler(socket));
+                 }
+                catch (IOException e) {
+                    socket.close();
                 }
-                System.out.println("Received: " + message);
             }
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
-            try {
-                shutdown();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            s.close();
         }
     }
+
 
     private void shutdown() throws IOException {
         if (serverConsoleThread.isAlive()) {
@@ -50,28 +52,38 @@ public class SimpleSingleConsoleServer {
         System.out.println("Server stopped");
     }
 
-    private void startConsoleThread() {
-        serverConsoleThread = new Thread(() -> {
-            try (var reader = new BufferedReader(new InputStreamReader(System.in))) {
-                System.out.print("Enter message for client >>>> ");
-                while (!Thread.currentThread().isInterrupted()) {
-                    if (reader.ready()) {
-                        var serverMessage = reader.readLine();
-                        out.writeUTF(serverMessage);
+
+
+    public class Handler extends Thread {
+        private DataInputStream in;
+        private DataOutputStream out;
+        private Socket socket;
+        public Handler(Socket socket) throws IOException {
+            this.socket=socket;
+            in = new DataInputStream(socket.getInputStream());
+            out = new DataOutputStream(socket.getOutputStream());
+            start();
+            run();
+        }
+            public void run(){
+                try{
+                while (true) {
+                    var message = in.readUTF();
+                    if (message.startsWith("/end")) {
+                        shutdown();
+                        break;
                     }
+                    System.out.println("Received: " + message);
                 }
             } catch (IOException e) {
                 e.printStackTrace();
+            } finally {
+                try {
+                    shutdown();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
-        });
-        serverConsoleThread.start();
-    }
-
-    private void waitForConnection(ServerSocket serverSocket) throws IOException {
-        System.out.println("Waiting for connection...");
-        var socket = serverSocket.accept();
-        System.out.println("Client connected");
-        in = new DataInputStream(socket.getInputStream());
-        out = new DataOutputStream(socket.getOutputStream());
+        }
     }
 }
